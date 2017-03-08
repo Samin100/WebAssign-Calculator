@@ -1,2 +1,2 @@
-# WebAssign-Calculator
-Simple script to calculate my average Calc II WebAssign grades.
+# Info
+This is a simple script to calculate my average Calc II WebAssign grades.
