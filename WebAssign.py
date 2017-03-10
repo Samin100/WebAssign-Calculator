@@ -1,10 +1,11 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
+from pw import pw  # password stored in separate file
 
 
 #WebAssign credentials
 user = 'sshameem'
-pw = ''
+pw = pw  #replace this with your actual password
 
 print('Loading browser...')
 url = 'https://www.webassign.net/umd/login.html'
@@ -25,7 +26,9 @@ pw_field.send_keys(pw)
 submit.click()
 
 print('Calculating scores...')
-xpath = '//*[@id="webAssign"]/div[2]/div[4]/div[1]/div[1]/div[2]/div[4]/p/a/strong'
+
+# xPath needs to be fixed: change from absolute path to dynamic path
+xpath = '//*[@id="webAssign"]/div[2]/div[4]/div[1]/div[1]/div[2]/div[4]/p/a/strong'  
 past_assignments = browser.find_element_by_xpath(xpath)
 past_assignments.click()
 
@@ -60,3 +63,4 @@ average = total / assignment_count
 average = round(average, 2)
 
 print('Your WebAssign average is ' + str(average) + '%')
+browser.close()
